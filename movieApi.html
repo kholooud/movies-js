@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>MovieApi</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   
+    <div class="strip-header-nav">
+	
+        <div class="strip-logo">
+            <img src="img/logo.png ">
+        </div>
+        <div class="strip-toggel-menu">
+            <i class="fa fa-align-justify"></i>
+        </div>
+    
+        <div class="strip-social-icon">
+            <div class="strip-lang">
+                <span>
+                    <i class="fas fa-globe"></i>
+                </span>
+            </div>
+            <div class="strip-share">
+                <span>
+                    <i class="fas fa-share-alt"></i>
+                </span>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="nav-tab-menu">
+        <div class="nav-item">
+            <ul>
+                <li class="item1"><a id="now-playing" class="nav-category" href="#" >Now playing</a></li>
+                <li class="item2"><a id="popular" class="nav-category" href="#">Popular</a></li>
+                <li class="item3"><a id="top-rated" class="nav-category" href="#" >Top Rated</a></li>
+        
+                <li class="item6"><a id="upcoming" class="nav-category" href="#">Upcoming</a></li> 
+                <li class="item6"><a class="nav-category" href="#contact" href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav-social-item">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-globe"></i></a>
+            <div class="pt-3">
+                <span>Copyright © 2019 All Rights Reserved.</span>
+            </div>
+            
+        </div>
+    </div>
+        <div class="container">
+            <div class="row" id="rowID">
+                
+            </div>
+        </div>
+        <section id="contact" class="container myM w-75 mx-auto my-5 ">  
+            <h2 class="text-light my-5">ContacUs...</h2>
+            <div class="row">
+              <div class="col-md-6">
+            <div class="form-group">
+              <input class="hambozo" id="name" placeholder="Enter Your Name" oninput="NameValidation()">
+                <div class="alert alert-danger d-none" id="namealert" role="alert">
+                  Your Name is not valid
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input class="hambozo" id="email" placeholder="Enter Email" oninput="EmailValidation()" >
+              <div class="alert alert-danger d-none" id="emailalert" role="alert">
+                Enter valid email
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input  class=" hambozo  " id="phone" placeholder="Enter phone" oninput="PhoneValidation()">
+              <div class="alert alert-danger d-none" id="phonealert" role="alert">
+                Enter valid phone
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input  class="hambozo" id="age" placeholder="Enter Age" oninput="ageValidation()">
+              <div class="alert alert-danger d-none" id="agealert" role="alert">
+                enter valid Age
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input  class="hambozo" type="password"  id="password" placeholder="Enter Password" oninput="PassValidation()">
+              <div class="alert alert-danger d-none" id="passwordalert" role="alert">
+                enter valid password Minimum eight characters, at least one letter and one number:
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input  class="hambozo" type="password"  id="rePassword" placeholder="Enter RePassword" oninput="RePasswordValidation()">
+              <div class="alert alert-danger d-none" id="repasswordalert" role="alert">
+                reenter your password
+              </div>
+            </div>
+          </div>
+        
+        
+          </div>  
+            
+            <button type="submit" disabled id="submitBtn" class="btn btn-outline-danger">Submit</button>
+        
+          </section>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
